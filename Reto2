@@ -1,0 +1,31 @@
+fun main (args: Array<String>){
+    makeRecipe()
+}
+fun makeRecipe (){
+            do{
+                println("Bienvenido a Recipe Maker")
+                println("Selecciona la opcion deseada\n" +
+                        "1. Hacer una receta\n" +
+                        "2. Ver mis recetas\n" +
+                        "3. Salir")
+                val response = readLine()?.toInt()
+                when(response){
+                    1-> viewRecipe()
+                    2-> println("Ha se leccionado Ver mis recetas")
+                }
+            }while (response!=3)
+print("Gracias por utilizar RecipeMaker")
+
+}
+fun viewRecipe(){
+    var j=1
+    val ingredientes = listOf("Agua","leche", "carne", "verduras", "frutas", "cereal", "huevos", "aceite")
+    println("Hacer receta\n Selecciona por categoria el ingrediente que buscas")
+    for (i in ingredientes) {
+        println("$j. $i")
+        j++
+    }
+    var ingredient =readLine()?.toInt()
+    println("Selecciono ${ingredientes[ingredient!!-1]}")
+println("\n")
+}
